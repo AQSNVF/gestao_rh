@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load bootstrap%}
+
+{% block main %}
+
+<h2>Editar o cadastro  de: {{ object }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{form | bootstrap}}
+
+    <button type="submit"class="btn btn-main">Salvar</button>
+</form>
+<br>
+
+<a href="{% url 'create_documento' object.id %}"class="btn btn-success">
+    Adicionar Documento
+</a>
+<br> Relação de Documentos<br>
+{% for documento in object.documento_set.all %}
+
+        <a href="{{ documento.arquivo.url }} ">{{ documento }}</a> <br>
+{% endfor %}
+
+{% endblock %}
