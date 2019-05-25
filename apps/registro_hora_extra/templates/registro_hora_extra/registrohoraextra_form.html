@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap%}
+
+{% block main %}
+
+<h2>Editar o Registro de Horas de : {{ object }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{form | bootstrap}}
+
+    <button type="submit"class="btn btn-main">Salvar</button>
+    <br>
+    {% if object %}
+    <a href="{% url 'delete_hora_extra' object.id %}"class="btn btn-danger">Deletar</button>
+    </a>
+    {% endif%}
+
+{% endblock %}

@@ -16,17 +16,21 @@ class ColaboradoresList(ListView):
         empresa_logada = self.request.user.colaborador.empresa
         return Colaborador.objects.filter(empresa=empresa_logada)
 
+
 class ColaboradorEdit(UpdateView):
     model = Colaborador
     fields = ['nome', 'departamentos']
+
 
 class ColaboradorDelete(DeleteView):
     model = Colaborador
     success_url = reverse_lazy('list_colaboradores')
 
+
 class ColaboradorNovo(CreateView):
     model = Colaborador
     fields = ['nome', 'departamentos']
+
 
     def form_valid(self, form):
         colaborador = form.save(commit=False)

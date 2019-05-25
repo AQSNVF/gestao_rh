@@ -9,7 +9,7 @@ class Documento(models.Model):
     arquivo = models.FileField(upload_to='documentos')
 
     def get_absolute_url(self):
-        return reverse('update_colaborador', args=[self.proprietario_id],)
+        return reverse('update_colaborador', args=[self.proprietario.id])
 
 
     def __str__(self):

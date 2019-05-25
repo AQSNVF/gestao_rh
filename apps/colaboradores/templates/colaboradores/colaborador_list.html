@@ -14,5 +14,9 @@
         </a>
         <br>
     {% endfor %}
+
+    {% if object %}
     <a href="{% url 'create_colaborador' %}" class="btn btn-info">Novo</a>
+    {% endif %}
+
 {% endblock %}
