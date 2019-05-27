@@ -10,7 +10,7 @@ SECRET_KEY = '+1+0he3&yo19s(c)gdgkyq^6ray+k*9s7#&l)@wa7@sttkdm3a'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['172.31.42.197']
+ALLOWED_HOSTS = ['18.221.197.90']
 
 
 INSTALLED_APPS = [
