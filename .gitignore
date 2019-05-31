@@ -4,3 +4,5 @@ venv
 *.pyc
 gestao_rh/__pycache__/
 aqsgestao_rh.pem
+media
+static

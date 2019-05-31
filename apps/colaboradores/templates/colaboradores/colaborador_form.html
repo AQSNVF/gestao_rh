@@ -10,18 +10,34 @@
 
     {{form | bootstrap}}
 
-    <button type="submit"class="btn btn-main">Salvar</button>
+    <button type="submit"class="btn btn-info">Salvar</button>
 </form>
 <br>
 
     <a href="{% url 'create_documento' object.id %}" class="btn btn-success">
         Adicionar Documento
     </a>
-<br> Relação de Documentos<br>
-
+<h3>Relação de Documentos</h3>
+<ul>
 {% for documento in object.documento_set.all %}
-
-     <a href="{{ documento.arquivo.url }} ">{{ documento }}</a> <br>
+    <li>
+         <a href="{{ documento.arquivo.url }} ">{{ documento }}</a><br>
+    </li>
 {% endfor %}
+</ul>
+<br>
+<h3>Banco de Horas</h3>
+<ul>
+{% for registro_hora in object.registrohoraextra_set.all %}
+    <li>
+         <a href="{% url 'update_hora_extra' registro_hora.id %}">
+             {{ registro_hora.motivo }} | {{ registro_hora.horas }}<br>
+         </a>
+    </li>
+
+{% endfor %}
+</ul>
+
+<h4>Total de horas extras: {{ object.total_horas_extras}}</h4>
 
 {% endblock %}

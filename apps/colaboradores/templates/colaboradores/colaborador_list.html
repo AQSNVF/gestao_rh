@@ -3,8 +3,9 @@
 {% block main %}
 
     Lista de Colaboradores
-{{ object }}
-<br>
+    {{ object }}
+
+    <br>
     {% for colaborador in object_list %}
         <a href="{% url 'update_colaborador' colaborador.id %}">
         {{ colaborador }}
@@ -15,8 +16,23 @@
         <br>
     {% endfor %}
 
+
+
     {% if object %}
-    <a href="{% url 'create_colaborador' %}" class="btn btn-info">Novo</a>
+
+        <a href="{% url 'create_colaborador' %}" class="btn btn-info">Novo</a>
+
     {% endif %}
 
+        <br>
+
+        <a href="{% url 'rel_he_colab_reportlab' %}"class="btn btn-info">
+        Relarório de Colaboradores e HE reportlab
+        </a>
+
+         <a href="{% url 'rel_he_colab_emp_xlwt' %}"class="btn btn-info">
+        Relarório de Colaboradores e HE xlwt
+        </a>
+
 {% endblock %}
+

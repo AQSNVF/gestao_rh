@@ -10,7 +10,9 @@
       Olá {{ usuario.colaborador.nome }}<br>
         <a href="{% url 'list_colaboradores' %}">Gerenciar Colaboradores</a><br>
         <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a><br>
-        <a href="{% url 'list_hora_extra' %}">Gerenciar Banco de Horas</a>
+        <a href="{% url 'list_hora_extra' %}">Gerenciar Banco de Horas</a><br>
+        <a href="{% url 'rel_he_colab_emp_reportlab' %}">Gerar .pdf com Reportlab</a><br>
+        <a href="{% url 'rel_he_colab_emp_xlwt' %}"> Relarório de Colaboradores e HE xlwt</a>
     </div>
     <div class="col-sm">
         <a href="{% url 'logout' %}">Logout</a><br>

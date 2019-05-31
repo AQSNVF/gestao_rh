@@ -9,9 +9,9 @@ SECRET_KEY = '+1+0he3&yo19s(c)gdgkyq^6ray+k*9s7#&l)@wa7@sttkdm3a'
 
 DEBUG = True
 
-#ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1']
 
-ALLOWED_HOSTS = ['18.221.98.218']
+#ALLOWED_HOSTS = ['18.221.98.218']
 
 
 INSTALLED_APPS = [
@@ -106,15 +106,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# #STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "staticfiles"),
+]
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 LOGIN_REDIRECT_URL = 'home',
 

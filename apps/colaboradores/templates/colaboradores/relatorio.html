@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block staticcss %}
+    <style>
+    .teste { color: red;}
+    </style>
+{% endblock %}
+
+{% block main %}
+    <h1 class="teste">Meu Relatório</h1>
+    <h2>{{ sales }}</h2>
+
+     <a href="{% url 'rel_he_colab_emp_xlwt' %}"class="btn btn-info">
+        Relarório de Colaboradores e HE xlwt
+     </a>
+{% endblock %}
