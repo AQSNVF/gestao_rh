@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_celery_results',
     'rest_framework',
     'rest_framework.authtoken',
     'apps.empresas',
@@ -30,7 +31,6 @@ INSTALLED_APPS = [
     'apps.registro_hora_extra',
     'apps.core',
     'bootstrapform',
-    'django-celery-results',
 ]
 
 
