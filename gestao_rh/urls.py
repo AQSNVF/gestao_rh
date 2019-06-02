@@ -2,7 +2,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib.auth import views as auth_views
+
+
+from apps.colaboradores.api.views import ColaboradorViewSet
+from apps.registro_hora_extra.api.views import RegistroHoraExtraViewSet
+from rest_framework import routers
+from apps.core import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+router.register(r'api/lista_colaboradores', ColaboradorViewSet)
+router.register(r'api/banco_horas-extras', RegistroHoraExtraViewSet)
 
 urlpatterns = [
     path('', include('apps.core.urls')),
@@ -13,7 +24,9 @@ urlpatterns = [
     path('horas-extras/', include('apps.registro_hora_extra.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
